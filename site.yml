@@ -1,0 +1,5 @@
+---
+- name: Install Drupal with Apache, mod-php,PostgreSQL and bind9 as DNS
+  hosts: all
+  roles:
+    - common
