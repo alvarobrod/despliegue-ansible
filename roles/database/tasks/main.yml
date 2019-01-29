@@ -1,3 +1,16 @@
 ---
 - name: Install PostgreSQL
   apt: name=postgresql state=present
+
+- name: Adding Drupal database
+  postgresql_db:
+    name: drupal
+    encoding: UTF-8
+
+- name: Adding Drupal user to database and granting privileges
+  postgresql_user:
+    db: drupal
+    name: admin
+    password: admin
+    priv: "ALL"
+    expires: infinity
