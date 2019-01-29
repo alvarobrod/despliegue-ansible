@@ -6,5 +6,6 @@
     - common
 
 - hosts: nodo1
+  become: yes
   roles:
     - database
