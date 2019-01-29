@@ -5,6 +5,6 @@
   roles:
     - common
 
-  hosts: nodo1
-  roles:
-    - database
+  - hosts: nodo1
+    roles:
+      - database
