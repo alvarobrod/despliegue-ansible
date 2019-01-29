@@ -4,3 +4,7 @@
   become: yes
   roles:
     - common
+
+  hosts: nodo1
+  roles:
+    - database
