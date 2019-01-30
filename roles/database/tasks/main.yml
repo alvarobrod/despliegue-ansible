@@ -1,6 +1,15 @@
 ---
-- name: Install PostgreSQL
-  apt: name=postgresql state=present
+- name: Installing PostgreSQL
+  apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - postgresql
+    - python-pip
+
+- name: Installing python libraries
+  pip:
+    name: psycopg2 
 
 - name: Adding Drupal database
   postgresql_db:
