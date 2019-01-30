@@ -17,5 +17,17 @@
     owner: bind
     group: bind
     mode: 0644
+  copy:
+    src: var/cache/bind/db.example
+    dest: /var/cache/bind/db.example
+    owner: bind
+    group: bind
+    mode: 0644
+  copy:
+    src: var/cache/bind/db.10.0
+    dest: /var/cache/bind/db.10.0
+    owner: bind
+    group: bind
+    mode: 0644
   notify:
     - restart bind9
