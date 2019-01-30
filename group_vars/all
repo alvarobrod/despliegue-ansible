@@ -1,0 +1,8 @@
+---
+# Server name
+server_name: drupal.example.org
+
+# Database data
+db_name: drupal
+db_user: admin
+db_passwd: admin
