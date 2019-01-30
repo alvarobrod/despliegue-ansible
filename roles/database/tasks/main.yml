@@ -9,11 +9,13 @@
     - python-psycopg2
 
 - name: Adding Drupal database
+  become_user: postgres
   postgresql_db:
     name: drupal
     encoding: UTF-8
 
 - name: Adding Drupal user to database and granting privileges
+  become_user: postgres
   postgresql_user:
     db: drupal
     name: admin
