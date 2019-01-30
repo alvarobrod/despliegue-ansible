@@ -1,0 +1,12 @@
+$ORIGIN {{ domain }}.
+$TTL    5
+@       IN      SOA     nodo1.          alvaro.nodo1. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                              5 )       ; Negative Cache TTL
+;
+@               IN              NS      nodo1.
+nodo1           IN              A       10.0.0.10
+nodo2           IN              A       10.0.0.20
