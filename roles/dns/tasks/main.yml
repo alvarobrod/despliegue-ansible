@@ -3,3 +3,11 @@
   apt:
     name: bind9
     state: latest
+
+- name: Setting up DNS zones
+  copy:
+    src: etc/bind/named.conf.local
+    dest: /etc/bind/named.conf.local
+    owner: bind
+    group: bind
+    mode: 0644
