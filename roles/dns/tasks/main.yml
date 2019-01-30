@@ -11,3 +11,5 @@
     owner: bind
     group: bind
     mode: 0644
+  notify:
+    - restart bind9    
