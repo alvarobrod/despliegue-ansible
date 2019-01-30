@@ -9,3 +9,4 @@
   become: yes
   roles:
     - database
+    - dns
