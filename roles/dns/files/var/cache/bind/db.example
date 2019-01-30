@@ -1,4 +1,4 @@
-$ORIGIN {{ domain }}.
+$ORIGIN example.org.
 $TTL    5
 @       IN      SOA     nodo1.          alvaro.nodo1. (
                               1         ; Serial
