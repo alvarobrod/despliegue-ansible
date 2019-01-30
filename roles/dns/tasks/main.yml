@@ -11,6 +11,5 @@
     owner: bind
     group: bind
     mode: 0644
-    remote_src: yes
   notify:
     - restart bind9    
