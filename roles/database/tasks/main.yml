@@ -5,11 +5,8 @@
     state: latest
   loop:
     - postgresql
-    - python-pip
-
-- name: Installing python libraries
-  pip:
-    name: psycopg2 
+    - postgresql-contrib
+    - python-psycopg2
 
 - name: Adding Drupal database
   postgresql_db:
