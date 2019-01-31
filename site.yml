@@ -6,6 +6,7 @@
     - common
 
 - hosts: nodo1
+  gather_facts: no
   become: yes
   roles:
     - database
