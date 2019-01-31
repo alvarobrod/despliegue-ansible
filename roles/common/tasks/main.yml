@@ -1,3 +1,5 @@
 ---
 - name: Updating system
-  apt: update_cache=yes upgrade=yes
+  apt:
+    update_cache: yes
+    upgrade: yes
