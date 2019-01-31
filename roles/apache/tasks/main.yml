@@ -1,5 +1,9 @@
 ---
 - name: Installing apache2
   apt:
-    name: apache2
+    name: "{{ item }}"
     state: latest
+  loop:
+    - php7.0
+    - libapache2-mod-php7.0
+    - php7.0-pgsql
