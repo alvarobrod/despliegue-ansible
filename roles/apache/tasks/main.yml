@@ -8,9 +8,9 @@
     - php7.0
     - libapache2-mod-php7.0
     - php7.0-pgsql
+    - python-git
 
-- name: Downloading and unzipping Drupal
-  unarchive:
-    src: https://www.drupal.org/download-latest/tar.gz
-    dest: /var/www
-    remote_src: yes
+- name: Cloning Drupal
+  git:
+    repo: git@github.com:drupal/drupal.git
+    dest: /var/www 
