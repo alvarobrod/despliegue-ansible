@@ -19,3 +19,14 @@
   copy:
     src: etc/apache2/sites-available/drupal.conf
     dest: /etc/apache2/sites-available/drupal.conf 
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Activating virtual host
+  file:
+    src: /etc/apache2/sites-available/drupal.conf
+    dest: /etc/apache2/sites-enabled/drupal.conf
+    owner: root
+    group: root
+    state: link
