@@ -30,3 +30,8 @@
     owner: root
     group: root
     state: link
+
+- name: Deleting default virtual host
+  file:
+    path: /etc/apache2/sites-enabled/000-default.conf
+    state: absent
