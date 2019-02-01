@@ -4,25 +4,31 @@
     name: bind9
     state: latest
 
-- name: Setting up DNS zones
+- name: Setting up named.conf.local
   copy:
     src: etc/bind/named.conf.local
     dest: /etc/bind/named.conf.local
     owner: bind
     group: bind
     mode: 0644
+
+- name: Commenting out the zone we use
   copy:
     src: etc/bind/zones.rfc1918
     dest: /etc/bind/zones.rfc1918
     owner: bind
     group: bind
     mode: 0644
+
+- name: Setting up zone file db.example
   copy:
     src: var/cache/bind/db.example
     dest: /var/cache/bind/db.example
     owner: bind
     group: bind
     mode: 0644
+
+- name: Setting up zone file db.10.0
   copy:
     src: var/cache/bind/db.10.0
     dest: /var/cache/bind/db.10.0
