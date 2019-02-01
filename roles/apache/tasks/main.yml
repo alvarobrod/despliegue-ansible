@@ -9,12 +9,7 @@
     - libapache2-mod-php7.0
     - php7.0-pgsql
 
-- name: Moving Drupal's zip
-  copy:
-    src: drupal-8.6.7.zip
-    dest: /var/www/
-  
 - name: Unzipping Drupal
   unarchive:
-    src: /var/www/drupal-8.6.7.zip
+    src: drupal-8.6.7.zip
     dest: /var/www/ 
