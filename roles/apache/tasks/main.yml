@@ -12,5 +12,5 @@
 
 - name: Cloning Drupal
   git:
-    repo: git@github.com:drupal/drupal.git
-    dest: /var/www 
+    repo: https://github.com/drupal/drupal.git
+    dest: /var/www/drupal/
