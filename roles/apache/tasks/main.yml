@@ -39,9 +39,3 @@
     state: absent
   notify:
     - restart apache2
-
-- name: Installing Drush (Drupal's Comand Line Shell)
-  composer:
-    command: require
-    global_command: yes
-    arguments: drush/drush
