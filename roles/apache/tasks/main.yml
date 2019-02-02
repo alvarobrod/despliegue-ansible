@@ -37,3 +37,9 @@
     state: absent
   notify:
     - restart apache2
+
+- name: Copying Composer installer script
+  file:
+    src: composer_install.sh
+    dest: /home/vagrant/composer_install.sh
+  command: sh /home/vagrant/composer_install.sh 
