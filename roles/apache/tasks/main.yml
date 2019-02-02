@@ -8,14 +8,8 @@
     - php7.0
     - libapache2-mod-php7.0
     - php7.0-pgsql
-    - python-git
     - composer
     - php7.0-xml
-
-- name: Cloning Drupal
-  git:
-    repo: https://github.com/drupal/drupal.git
-    dest: /var/www/drupal/
 
 - name: Setting up a new virtual host
   copy:
