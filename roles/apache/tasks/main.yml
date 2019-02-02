@@ -9,6 +9,7 @@
     - libapache2-mod-php7.0
     - php7.0-pgsql
     - python-git
+    - composer
 
 - name: Cloning Drupal
   git:
@@ -37,9 +38,3 @@
     state: absent
   notify:
     - restart apache2
-
-- name: Copying Composer installer script
-  copy:
-    src: composer_install.sh
-    dest: /home/vagrant/composer_install.sh
-  command: sh /home/vagrant/composer_install.sh 
