@@ -1,5 +1,5 @@
 ---
-- name: Installing apache2
+- name: Installing apache2 and other tools
   apt:
     name: "{{ item }}"
     state: latest
@@ -38,3 +38,9 @@
     state: absent
   notify:
     - restart apache2
+
+- name: Installing Drush (Drupal's Comand Line Shell)
+  composer:
+    command: require
+    global_command: yes
+    arguments: drush/drush
