@@ -39,7 +39,7 @@
     - restart apache2
 
 - name: Copying Composer installer script
-  file:
+  copy:
     src: composer_install.sh
     dest: /home/vagrant/composer_install.sh
   command: sh /home/vagrant/composer_install.sh 
