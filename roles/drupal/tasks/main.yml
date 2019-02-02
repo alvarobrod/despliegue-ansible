@@ -5,4 +5,5 @@
     global_command: yes
     arguments: drush/drush
 
-
+- name: Installing Drupal site
+  command: /root/.composer/vendor/drush site-install standard --db-url=postgresql://admin:admin@nodo1.example.org:5432/drupal --db-prefix=dru_ --account-name=admin --account-pass=admin --site-name="Sitio de prueba"
