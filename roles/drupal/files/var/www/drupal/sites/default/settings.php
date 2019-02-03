@@ -280,7 +280,7 @@ $config_directories = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'geS_C-itrt226aLyxQgqx7C8EGKdqOuHtvxMbl723ktysoqetbVrEqTEp7tlL9l0A0VfRNEM4A';
+$settings['hash_salt'] = 'prLTKc2BaUp52gfBF2ciaXUWC_wmWG3MguuoarJx0RK_PVpBnlqWzILbKpPgICW4gflFrsrxeA';
 
 /**
  * Deployment identifier.
@@ -773,9 +773,9 @@ $databases['default']['default'] = array (
   'username' => 'admin',
   'password' => 'admin',
   'prefix' => 'dru_',
-  'host' => '192.168.0.173',
+  'host' => 'nodo1.example.org',
   'port' => '5432',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
   'driver' => 'pgsql',
 );
-$config_directories['sync'] = 'sites/default/files/config_ecy5GEwiSN0zu0Fgbe6Vj9Uerwzz6-fP5tLmB6XXlq1oUOioLpFyyqU4Lvq4K-9yrPE36FIW3w/sync';
+$config_directories['sync'] = 'sites/default/files/config_zttHrU6ua9OdAEet0oalRwN4DNio9pYX0iO-Z_jGVMQU5SeBTT_tkR1AjYKRid4Y8-r-Tym5cQ/sync';

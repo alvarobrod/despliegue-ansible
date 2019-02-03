@@ -5,8 +5,8 @@
     dest: /var/www/
     remote_src: yes
 
-    #- name: Renaming Drupal directory
-    #  shell: mv /var/www/drupal* /var/www/drupal
+- name: Renaming Drupal directory
+  shell: mv /var/www/drupal* /var/www/drupal
 
 - name: Creating sites/default/files
   file:
@@ -15,6 +15,11 @@
     owner: root
     group: root
     mode: 0666
+
+- name: Copying sites/default/files contents
+  copy:
+    src: var/www/drupal/sites/default/files/
+    dest: /var/www/drupal/sites/default/files/
 
 - name: Copying settings.php file
   copy:
