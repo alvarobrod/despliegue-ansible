@@ -17,7 +17,11 @@
     mode: 0666
 
 - name: Copying settings.php file
-  file:
-
+  copy:
+    src: var/www/drupal/sites/default/settings.php
+    dest: /var/www/drupal/sites/default/settings.php 
+    owner: root
+    group: root
+    mode: 0666
   notify:
     - restart apache2
