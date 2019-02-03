@@ -10,6 +10,7 @@
     - php7.0-pgsql
     - php7.0-xml
     - php7.0-mbstring
+    - php7.0-gd
 
 - name: Setting up a new virtual host
   copy:
