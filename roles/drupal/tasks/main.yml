@@ -7,5 +7,17 @@
 
 - name: Renaming Drupal directory
   shell: mv /var/www/drupal* /var/www/drupal
+
+- name: Creating sites/default/files
+  file:
+    path: /var/www/drupal/sites/default/files
+    state: directory
+    owner: root
+    group: root
+    mode: 0666
+
+- name: Copying settings.php file
+  file:
+
   notify:
     - restart apache2
