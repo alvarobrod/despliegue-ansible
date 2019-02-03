@@ -9,6 +9,8 @@
     - python-psycopg2
 
 - name: Adding Drupal database
+  become: yes
+  become_user: postgres
   vars:
     ansible_ssh_pipelining: true
   postgresql_db:
@@ -16,6 +18,8 @@
     encoding: UTF-8
 
 - name: Adding Drupal user to database and granting privileges
+  become: yes
+  become_user: postgres
   vars:
     ansible_ssh_pipelining: true
   postgresql_user:
@@ -25,12 +29,19 @@
     priv: "ALL"
     expires: infinity
 
+- name: Copying database dump file
+  copy:
+    src: backups/drupal.sql
+    dest: /var/lib/postgresql/drupal.sql
+
 - name: Restoring database
+  become: yes
+  become_user: postgres
   vars:
     ansible_ssh_pipelining: true
   postgresql_db:
     name: "{{ db_name }}"
     state: restore
-    target: backups/drupal.sql
+    target: /var/lib/postgresql/drupal.sql
   notify:
     - restart postgresql
