@@ -1,13 +1,16 @@
-# despliegue-ansible
-Tarea del despliegue con Ansible
+# Despliegue de Drupal con Ansible
 
-Crea un escenario de forma automática utilizando la herramienta que prefieras: Vagrant, Terraform, Heat, etc. Este escenario incluirá dos máquinas, que llamaremos nodo1 y nodo2.
+Este escenario contiene dos máquinas, nodo 1 y nodo2. Cada una tendrá diferentes servicios instalados:
 
-Configura apropiadamente nodo1 y nodo2 con ansible para instalar la aplicación drupal que funcione bajo drupal.example.com
+- nodo1: Base de datos PostgreSQL y DNS bind9
+- nodo2: Servidor web Apache con mod-php corriendo Drupal
 
-- nodo1: PostgreSQL y Bind9
-- nodo2: Apache con mod-php
-
-El cliente simplemente levantará el escenario y configurará como DNS primario el de nodo1, para acceder a un drupal totalmente configurado en drupal.example.com. IMPORTANTE: No se considerará terminada la tarea si lo que aparece es el sistema de configuración del sitio en drupal, el sitio web tiene que estar totalmente configurado y listo para usar.
-
-El resultado se tiene que proporcionar como un repositorio en github
+Para levantar el escenario, ejecutaremos:
+```
+vagrant up
+```
+Acto seguido, para ejecutar el _playbook_, introduciremos el siguiente comando:
+```
+ansible-playbook site.yml
+``` 
+Una vez hecho esto, configuraremos como DNS primario la dirección IP de nodo1 (10.0.0.10) y podremos acceder al sitio Drupal creado (credenciales -> user: admin, pass:admin) desde drupal.example.org
