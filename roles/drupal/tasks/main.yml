@@ -24,5 +24,18 @@
     owner: root
     group: root
     mode: 0666
+
+- name: Downloading Drush  
+  get_url:
+    url: https://github.com/drush-ops/drush/releases/download/8.1.18/drush.phar
+    dest: /usr/local/bin/drush
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Installing Drupal through Drush
+  command: drush site-install standard -y --site-name="Despliegue de Drupal con Ansible" --account-name="admin" --account-pass="admin" --db-url=pgsql://admin:admin@10.0.0.10/drupal
+  args:
+    chdir: /var/www/drupal
   notify:
     - restart apache2
