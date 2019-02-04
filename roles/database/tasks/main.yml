@@ -43,5 +43,21 @@
     name: "{{ db_name }}"
     state: restore
     target: /var/lib/postgresql/drupal.sql
+
+- name: Copying postgresql.conf
+  copy:
+    src: etc/postgresql/9.6/main/postgresql.conf
+    dest: /etc/postgresql/9.6/main/postgresql.conf
+    owner: postgres
+    group: postgres
+    mode: 0644
+
+- name: Copying pg_hba.conf
+  copy:
+    src: etc/postgresql/9.6/main/pg_hba.conf
+    dest: /etc/postgresql/9.6/main/pg_hba.conf
+    owner: postgres
+    group: postgres
+    mode: 0640
   notify:
     - restart postgresql
