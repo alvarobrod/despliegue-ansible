@@ -18,8 +18,9 @@
 
 - name: Copying settings.php file
   copy:
-    src: var/www/drupal/sites/default/settings.php
+    src: /var/www/drupal/sites/default/default.settings.php
     dest: /var/www/drupal/sites/default/settings.php 
+    remote_src: yes
     owner: root
     group: root
     mode: 0666
