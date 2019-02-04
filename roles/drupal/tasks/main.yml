@@ -16,11 +16,6 @@
     group: root
     mode: 0666
 
-- name: Copying sites/default/files contents
-  copy:
-    src: var/www/drupal/sites/default/files/
-    dest: /var/www/drupal/sites/default/files/
-
 - name: Copying settings.php file
   copy:
     src: var/www/drupal/sites/default/settings.php
