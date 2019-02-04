@@ -33,9 +33,10 @@
     group: root
     mode: 0755
 
+- name: Changing working directory to /var/www/drupal
+  command: cd /var/www/drupal
+
 - name: Installing Drupal through Drush
   command: drush site-install standard -y --site-name="Despliegue de Drupal con Ansible" --account-name="admin" --account-pass="admin" --db-url=pgsql://admin:admin@10.0.0.10/drupal
-  args:
-    chdir: /var/www/drupal
   notify:
     - restart apache2
