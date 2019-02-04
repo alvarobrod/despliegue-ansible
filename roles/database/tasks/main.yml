@@ -29,21 +29,6 @@
     priv: "ALL"
     expires: infinity
 
-- name: Copying database dump file
-  copy:
-    src: backups/drupal.sql
-    dest: /var/lib/postgresql/drupal.sql
-
-- name: Restoring database
-  become: yes
-  become_user: postgres
-  vars:
-    ansible_ssh_pipelining: true
-  postgresql_db:
-    name: "{{ db_name }}"
-    state: restore
-    target: /var/lib/postgresql/drupal.sql
-
 - name: Copying postgresql.conf
   copy:
     src: etc/postgresql/9.6/main/postgresql.conf
