@@ -10,3 +10,4 @@ $TTL    5
 $ORIGIN 0.0.10.in-addr.arpa.
 10      IN      PTR     nodo1.example.org.
 20      IN      PTR     nodo2.example.org.
+20      IN      PTR     drupal.example.org.
