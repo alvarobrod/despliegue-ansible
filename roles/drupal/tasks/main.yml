@@ -38,5 +38,10 @@
 
 - name: Installing Drupal through Drush
   shell: cd /var/www/drupal && drush site-install standard -y --site-name="Despliegue de Drupal con Ansible" --account-name="admin" --account-pass="admin" --db-url=pgsql://admin:admin@10.0.0.10/drupal -y
+
+- name: Disabling CSS and JS aggregation
+  shell: drush -y config-set system.performance css.preprocess 0 && drush -y config-set system.performance js.preprocess 0
   notify:
     - restart apache2
+
+
